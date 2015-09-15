@@ -1,5 +1,5 @@
 Charater = function () {
-
+    
     this.str= 0;
     this.dex= 0;
     this.con= 0;
@@ -8,4 +8,4 @@ Charater = function () {
     this.chr= 0;
 
   // body...
-}
+};
