@@ -11,6 +11,8 @@ function CharacterGeneratorViewModel() {
   self.levelclass1 = ko.observable(0);
   self.levelclass2 = ko.observable(0);
   self.availableRaces = new AvailableRaces();
+  self.charater_name = ko.observable();
+  self.player_name = ko.observable();
   self.race = ko.observable(self.availableRaces.races[0]);
 
   self.str = new CharaterStat("str",self.race);

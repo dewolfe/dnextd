@@ -15,7 +15,7 @@ var CharaterStat = function(name,race) {
    return this.base()+this.modifier();
 };
   this.saving_throw = ko.computed(function(){
-    return ((this.base()+this.modifier())-10)/2;
+    return Math.floor(((this.base()+this.modifier())-10)/2);
   },this);
 };
 function four_d_six(self) {
