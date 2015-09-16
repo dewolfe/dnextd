@@ -13,6 +13,7 @@ function CharacterGeneratorViewModel() {
   self.availableRaces = new AvailableRaces();
   self.charater_name = ko.observable();
   self.player_name = ko.observable();
+  self.remove_me = ko.observable();
   self.race = ko.observable(self.availableRaces.races[0]);
 
   self.str = new CharaterStat("str",self.race);
