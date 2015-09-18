@@ -1,37 +1,56 @@
   var skills = [{
-    name: "Athletics"
+    name: "Athletics",
+    check: "str"
   }, {
-    name: "Investigation"
+    name: "Investigation",
+    check: "int"
   }, {
-    name: "Perception"
+    name: "Perception",
+    check: "wis"
   }, {
-    name: "Acrobatics"
+    name: "Acrobatics",
+    check: "dex"
   }, {
-    name: "Nature"
+    name: "Nature",
+    check: "int"
+
   }, {
-    name: "Survival"
+    name: "Survival",
+    check: "wis"
   }, {
-    name: "Slight of Hand"
+    name: "Slight of Hand",
+    check: "dex"
   }, {
-    name: "Religion"
+    name: "Religion",
+    check: "int"
   }, {
-    name: "Deception"
+    name: "Deception",
+    check: "cha"
   }, {
-    name: "Stealth"
+    name: "Stealth",
+    check: "dex"
   }, {
-    name: "Animal Handling"
+    name: "Animal Handling",
+    check: "wis"
   }, {
-    name: "Intimidation"
+    name: "Intimidation",
+    check: "cha"
   }, {
-    name: "Arcana"
+    name: "Arcana",
+    check: "int"
   }, {
-    name: "Insight"
+    name: "Insight",
+    check: "wis"
   }, {
-    name: "Performance"
+    name: "Performance",
+    check: "cha"
   }, {
-    name: "History"
+    name: "History",
+    check: "int"
   }, {
-    name: "Medicine"
+    name: "Medicine",
+    check: "wis"
   }, {
-    name: "Persuasion"
+    name: "Persuasion",
+    check: "cha"
   }];
