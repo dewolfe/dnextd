@@ -15,7 +15,7 @@ function CharacterGeneratorViewModel() {
   self.player_name = ko.observable();
   self.remove_me = ko.observable();
   self.race = ko.observable(self.availableRaces.races[0]);
-
+  self.skills = ko.observableArray(skills);
   self.str = new CharaterStat("str",self.race);
   self.dex = new CharaterStat("dex",self.race);
   self.con = new CharaterStat("con",self.race);
@@ -33,7 +33,9 @@ function CharacterGeneratorViewModel() {
   self.avaiableClasses = ko.observableArray(['Barbarian', 'Bard', 'Cleric',
     'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Wizard'
   ]);
-
+  self.skill_modifier = function(data){
+    return self[data.check].saving_throw();
+  };
   self.roll_4_d_6 = function() {
     four_d_six(this);
     self.populate_stats(0);

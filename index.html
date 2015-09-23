@@ -23,123 +23,136 @@
       <div class="col-xs-6">
         <input type="text" class="col-xs-4 col-xs-offset-4 text-center" data-bind="text: player_name">
       </div>
-      <div class="row">
-        <div class="col-xs-3 text-center">Class</div>
-        <div class="col-xs-3 text-center">Level</div>
-        <div class="col-xs-3 text-center">Class</div>
-        <div class="col-xs-3 text-center">Level</div>
-      </div>
-      <div class="row">
-        <div class="col-xs-3 text-center">
-          <select class="selectpicker form-control" data-bind="options: avaiableClasses,
+    </div>
+    <div class="row">
+      <div class="col-xs-3 text-center">Class</div>
+      <div class="col-xs-3 text-center">Level</div>
+      <div class="col-xs-3 text-center">Class</div>
+      <div class="col-xs-3 text-center">Level</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 text-center">
+        <select class="selectpicker form-control" data-bind="options: avaiableClasses,
                                                              selectedOptions: chosenclass1
                                                              "></select>
+      </div>
+      <div class="col-xs-3 text-center">
+        <div class="col-xs-4 col-xs-offset-4">
+          <input class=" form-control" type="number" data-bind "number: levelclass1">
         </div>
-        <div class="col-xs-3 text-center">
-          <div class="col-xs-4 col-xs-offset-4">
-            <input class=" form-control" type="number" data-bind "number: levelclass1">
-          </div>
-        </div>
-        <div class="col-xs-3 text-center">
-          <select class="selectpicker form-control" data-bind="options: avaiableClasses,
+      </div>
+      <div class="col-xs-3 text-center">
+        <select class="selectpicker form-control" data-bind="options: avaiableClasses,
                                                              selectedOption: chosenclass2"></select>
-        </div>
-        <div class="col-xs-3 text-center">
-          <div class="col-xs-4 col-xs-offset-4">
-            <input class="form-control" type="number">
-          </div>
+      </div>
+      <div class="col-xs-3 text-center">
+        <div class="col-xs-4 col-xs-offset-4">
+          <input class="form-control" type="number">
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-3 text-center">Race</div>
-        <div class="col-xs-3 text-center">Sub Race</div>
-        <div class="col-xs-3 text-center">Aligenment</div>
+    </div>
+    <div class="row">
+      <div class="col-xs-3 text-center">Race</div>
+      <div class="col-xs-3 text-center">Sub Race</div>
+      <div class="col-xs-3 text-center">Aligenment</div>
 
-      </div>
-      <div class="row">
-        <div class="col-xs-3 text-center">
-          <select class="selectpicker form-control" data-bind='options: availableRaces.races,
+    </div>
+    <div class="row">
+      <div class="col-xs-3 text-center">
+        <select class="selectpicker form-control" data-bind='options: availableRaces.races,
                                                                  optionsText: "name",
                                                                  value: race,
                                                                  selectedOption: race()'>
 
-          </select>
-        </div>
-        <div class="col-xs-3 text-center" data-bind="with: race">
-          <select class="selectpicker form-control" data-bind='options: sub_race'>
+        </select>
+      </div>
+      <div class="col-xs-3 text-center" data-bind="with: race">
+        <select class="selectpicker form-control" data-bind='options: sub_race'>
 
-          </select>
-        </div>
-        <div class="col-xs-3 text-center">
-          <select class="selectpicker form-control" data-bind='options: avaliableAllignment(),
+        </select>
+      </div>
+      <div class="col-xs-3 text-center">
+        <select class="selectpicker form-control" data-bind='options: avaliableAllignment(),
                                                                value: aligenment'>
-          </select>
-        </div>
+        </select>
       </div>
+    </div>
 
 
-      <div class="row">
+    <div class="row">
+      <div class="col-xs-3">
+        <button class="btn btn-default" data-bind="click: roll_4_d_6">Roll</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="col-xs-3"></div>
+        <div class="col-xs-3">Attribute</div>
+        <div class="col-xs-3">Modifier</div>
+        <div class="col-xs-3">Saving Throw</div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-6">
         <div class="col-xs-3">
-          <button class="btn btn-default" data-bind="click: roll_4_d_6">Roll</button>
+          <div class="col-xs-12 center"></div>
+          <div class="col-xs-12 center">STR</div>
+          <div class="col-xs-12 center">DEX</div>
+          <div class="col-xs-12 center">CON</div>
+          <div class="col-xs-12 center">INT</div>
+          <div class="col-xs-12 center">WIZ</div>
+          <div class="col-xs-12 center">CHR</div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-3"></div>
-          <div class="col-xs-3">Attribute</div>
-          <div class="col-xs-3">Modifier</div>
-          <div class="col-xs-3">Saving Throw</div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-xs-6">
-          <div class="col-xs-3">
-            <div class="col-xs-12 center"></div>
-            <div class="col-xs-12 center">STR</div>
-            <div class="col-xs-12 center">DEX</div>
-            <div class="col-xs-12 center">CON</div>
-            <div class="col-xs-12 center">INT</div>
-            <div class="col-xs-12 center">WIZ</div>
-            <div class="col-xs-12 center">CHR</div>
-          </div>
-          <div class="col-xs-3">
-            <div class="col-xs-12 center"></div>
-            <div class="container" data-bind="sortable: {data: target_numbers, afterMove: populate_stats} ">
-              <div class="item">
-                <span data-bind="text: stat"></span>
-              </div>
+        <div class="col-xs-3">
+          <div class="col-xs-12 center"></div>
+          <div class="container" data-bind="sortable: {data: target_numbers, afterMove: populate_stats} ">
+            <div class="item">
+              <span data-bind="text: stat"></span>
             </div>
           </div>
-          <div class="col-xs-3">
-            <span class="col-xs-12 center" data-bind="text: str.modifier()"></span>
-            <span class="col-xs-12 center" data-bind="text: dex.modifier()"></span>
-            <span class="col-xs-12 center" data-bind="text: con.modifier()"></span>
-            <span class="col-xs-12 center" data-bind="text: int.modifier()"></span>
-            <span class="col-xs-12 center" data-bind="text: wis.modifier()"></span>
-            <span class="col-xs-12 center" data-bind="text: cha.modifier()"></span>
-          </div>
-          <div class="col-xs-3">
-            <span class="col-xs-12 center" data-bind="text: str.saving_throw()"></span>
-            <span class="col-xs-12 center" data-bind="text: dex.saving_throw()"></span>
-            <span class="col-xs-12 center" data-bind="text: con.saving_throw()"></span>
-            <span class="col-xs-12 center" data-bind="text: int.saving_throw()"></span>
-            <span class="col-xs-12 center" data-bind="text: wis.saving_throw()"></span>
-            <span class="col-xs-12 center" data-bind="text: cha.saving_throw()"></span>
-          </div>
+        </div>
+        <div class="col-xs-3">
+          <span class="col-xs-12 center" data-bind="text: str.modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: dex.modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: con.modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: int.modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: wis.modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: cha.modifier()"></span>
+        </div>
+        <div class="col-xs-3">
+          <span class="col-xs-12 center" data-bind="text: str.saving_throw()"></span>
+          <span class="col-xs-12 center" data-bind="text: dex.saving_throw()"></span>
+          <span class="col-xs-12 center" data-bind="text: con.saving_throw()"></span>
+          <span class="col-xs-12 center" data-bind="text: int.saving_throw()"></span>
+          <span class="col-xs-12 center" data-bind="text: wis.saving_throw()"></span>
+          <span class="col-xs-12 center" data-bind="text: cha.saving_throw()"></span>
         </div>
       </div>
-
+    </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="col-xs-3 center">Profinenct</div>
+        <div class="col-xs-6 center">skill</div>
+        <div class="col-xs-3 center">modifier</div>
+        <div data-bind ="foreach: skills">
+          <div class="col-xs-3">#</div>
+          <div class="col-xs-6" data-bind="text: name"></div>
+          <div class="col-xs-3" data-bind="text: $parent.skill_modifier($data)"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 <footer>
-  <script type='text/javascript' src='js/jquery-2.1.3.min.js'></script>
-  <script type='text/javascript' src='js/jquery-ui.min.js'></script>
+  <script type='text/javascript' src='js/lib/jquery-2.1.3.min.js'></script>
+  <script type='text/javascript' src='js/lib/jquery-ui.min.js'></script>
 
-  <script type='text/javascript' src='js/bootstrap.min.js'></script>
-  <script type='text/javascript' src='js/bootstrap-select.min.js'></script>
+  <script type='text/javascript' src='js/lib/bootstrap.min.js'></script>
+  <script type='text/javascript' src='js/lib/bootstrap-select.min.js'></script>
 
-  <script type='text/javascript' src='js/knockout-3.3.0.js'></script>
-  <script type='text/javascript' src='js/knockoutdrop.js'></script>
+  <script type='text/javascript' src='js/lib/knockout-3.3.0.js'></script>
+  <script type='text/javascript' src='js/lib/knockoutdrop.js'></script>
 
   <script type='text/javascript' src="js/util.js"></script>
   <script type='text/javascript' src='js/charater.js'></script>
