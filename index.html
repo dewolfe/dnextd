@@ -32,9 +32,10 @@
     </div>
     <div class="row">
       <div class="col-xs-3 text-center">
-        <select class="selectpicker form-control" data-bind="options: avaiableClasses,
-                                                             selectedOptions: chosenclass1
-                                                             "></select>
+        <select class="selectpicker form-control" data-bind='options: avaiableClasses.dclasses,
+                                                          optionsText: "name",
+                                                          value: chosenclass1,
+                                                          selectedOption: chosenclass1()'></select>
       </div>
       <div class="col-xs-3 text-center">
         <div class="col-xs-4 col-xs-offset-4">
@@ -42,12 +43,14 @@
         </div>
       </div>
       <div class="col-xs-3 text-center">
-        <select class="selectpicker form-control" data-bind="options: avaiableClasses,
-                                                             selectedOption: chosenclass2"></select>
+        <select class="selectpicker form-control"  data-bind='options: avaiableClasses.dclasses,
+                                                          optionsText: "name",
+                                                          value: chosenclass2,
+                                                          selectedOption: chosenclass2()'></select>
       </div>
       <div class="col-xs-3 text-center">
         <div class="col-xs-4 col-xs-offset-4">
-          <input class="form-control" type="number">
+          <input class=" form-control" type="number" data-bind "number: levelclass2">
         </div>
       </div>
     </div>
@@ -157,6 +160,7 @@
   <script type='text/javascript' src="js/util.js"></script>
   <script type='text/javascript' src='js/charater.js'></script>
   <script type='text/javascript' src='js/available_races.js'></script>
+  <script type='text/javascript' src='js/available_classes.js'></script>
   <script type='text/javascript' src='js/skills.js'></script>
   <script type='text/javascript' src='js/charter_gen_viewmodel.js'></script>
 

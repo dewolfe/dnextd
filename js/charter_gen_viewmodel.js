@@ -4,18 +4,20 @@ function CharacterGeneratorViewModel() {
   var self = this;
   var chartater = new Charater();
   self.numbers = ko.observableArray([1, 2, 3, 4, 5, 6]);
-  self.chosenclass2 = ko.observableArray([]);
-  self.chosenclass1 = ko.observableArray([]);
+
   self.chosenRace = ko.observableArray([]);
   self.chosenAllignment = ko.observable();
-  self.levelclass1 = ko.observable(0);
-  self.levelclass2 = ko.observable(0);
   self.availableRaces = new AvailableRaces();
+  self.avaiableClasses = new AvaiableClasses();
   self.charater_name = ko.observable();
   self.player_name = ko.observable();
   self.remove_me = ko.observable();
   self.race = ko.observable(self.availableRaces.races[0]);
   self.skills = ko.observableArray(skills);
+  self.chosenclass1 = ko.observable(self.avaiableClasses.dclasses[0]);
+  self.chosenclass2 = ko.observable();
+  self.levelclass1 = ko.observable(0);
+  self.levelclass2 = ko.observable(0);
   self.str = new CharaterStat("str",self.race);
   self.dex = new CharaterStat("dex",self.race);
   self.con = new CharaterStat("con",self.race);
@@ -30,9 +32,6 @@ function CharacterGeneratorViewModel() {
   self.aligenment = ko.observable();
   self.avaliableAllignment = ko.observableArray(['CE', 'LE', 'N', 'CG', 'LG']);
 
-  self.avaiableClasses = ko.observableArray(['Barbarian', 'Bard', 'Cleric',
-    'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Wizard'
-  ]);
   self.skill_modifier = function(data){
     return self[data.check].saving_throw();
   };
