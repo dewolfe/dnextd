@@ -18,6 +18,8 @@ function CharacterGeneratorViewModel() {
   self.chosenclass2 = ko.observable();
   self.levelclass1 = ko.observable(0);
   self.levelclass2 = ko.observable(0);
+  self.proficient_skill = ko.observableArray([]);
+
   self.str = new CharaterStat("str",self.race);
   self.dex = new CharaterStat("dex",self.race);
   self.con = new CharaterStat("con",self.race);
@@ -31,7 +33,6 @@ function CharacterGeneratorViewModel() {
 
   self.aligenment = ko.observable();
   self.avaliableAllignment = ko.observableArray(['CE', 'LE', 'N', 'CG', 'LG']);
-
   self.skill_modifier = function(data){
     return self[data.check].saving_throw();
   };
