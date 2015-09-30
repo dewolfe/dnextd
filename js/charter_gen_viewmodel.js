@@ -14,8 +14,8 @@ function CharacterGeneratorViewModel() {
   self.skills = ko.observableArray(skills);
   self.chosenclass1 = ko.observable(self.avaiableClasses.dclasses[0]);
   self.chosenclass2 = ko.observable();
-  self.levelclass1 = ko.observable(0);
-  self.levelclass2 = ko.observable(0);
+  self.levelclass1 = ko.observable();
+  self.levelclass2 = ko.observable();
   self.proficient_skill = ko.observableArray([]);
 
   self.str = new CharaterStat("str", self.race);
@@ -29,16 +29,27 @@ function CharacterGeneratorViewModel() {
   self.target_numbers = ko.observableArray([new Stat(0), new Stat(0), new Stat(0),
     new Stat(0), new Stat(0), new Stat(0)
   ]);
+  self.proficient_bouns=ko.computed(function(){
+     return self.chosenclass1().proficiency[self.levelclass1()];
+  },this);
 
   self.aligenment = ko.observable();
   self.avaliableAllignment = ko.observableArray(['CE', 'LE', 'N', 'CG', 'LG']);
   self.skill_modifier = function(data) {
     var proficient = 0;
     if (self.proficient_skill().indexOf(data) >= 0) {
-      proficient = 2;
+      proficient = self.proficient_bouns();
     }
     return self[data.check].saving_throw() + proficient;
   };
+  self.enable_skill =function(data){
+    if(self.chosenclass1().skills.indexOf(data.name) >= 0){
+      return true;
+    }else{
+      return false;
+    }
+  };
+
   self.roll_4_d_6 = function() {
     four_d_six(this);
     self.populate_stats(0);
@@ -47,6 +58,7 @@ function CharacterGeneratorViewModel() {
     model.numbers.remove(data);
     model.target.push(data);
   };
+
   self.populate_stats = function(arg) {
     $.each(self.target_numbers(), function(i, v) {
       self.stats_array[i].base(v.stat());
