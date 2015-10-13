@@ -2,19 +2,15 @@ function CharacterGeneratorViewModel() {
   var self = this;
   var chartater = new Charater();
   self.numbers = ko.observableArray([1, 2, 3, 4, 5, 6]);
-
   self.chosenRace = ko.observableArray([]);
   self.chosenAllignment = ko.observable();
   self.availableRaces = new AvailableRaces();
-  self.avaiableClasses = new AvaiableClasses();
   self.charater_name = ko.observable();
   self.player_name = ko.observable();
   self.remove_me = ko.observable();
   self.race = ko.observable(self.availableRaces.races[0]);
   self.skills = ko.observableArray(skills);
-  self.chosenclass1 = ko.observable(self.avaiableClasses.dclasses[0]);
-  self.chosenclass2 = ko.observable();
-  self.levelclass1 = ko.observable();
+  self.levelclass1 = ko.observable(1);
   self.levelclass2 = ko.observable();
   self.proficient_skill = ko.observableArray([]);
 
@@ -24,6 +20,9 @@ function CharacterGeneratorViewModel() {
   self.int = new CharaterStat("int", self.race);
   self.wis = new CharaterStat("wis", self.race);
   self.cha = new CharaterStat("cha", self.race);
+  self.avaiableClasses =  new AvaiableClasses(self);
+  self.chosenclass1 = ko.observable(self.avaiableClasses.dclasses[0]);
+  self.chosenclass2 = ko.observable();
 
   self.stats_array = [self.str, self.dex, self.con, self.int, self.wis, self.cha];
   self.target_numbers = ko.observableArray([new Stat(0), new Stat(0), new Stat(0),
@@ -65,4 +64,5 @@ function CharacterGeneratorViewModel() {
     });
   };
   self.roll_4_d_6();
+
 }
