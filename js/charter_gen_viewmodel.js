@@ -5,6 +5,7 @@ function CharacterGeneratorViewModel() {
   self.chosenRace = ko.observableArray([]);
   self.chosenAllignment = ko.observable();
   self.availableRaces = new AvailableRaces();
+  self.availableBackgrounds = new availableBackgrounds();
   self.charater_name = ko.observable();
   self.player_name = ko.observable();
   self.remove_me = ko.observable();
@@ -23,6 +24,7 @@ function CharacterGeneratorViewModel() {
   self.avaiableClasses =  new AvaiableClasses(self);
   self.chosenclass1 = ko.observable(self.avaiableClasses.dclasses[0]);
   self.chosenclass2 = ko.observable();
+  self.chosenbackground = ko.observable();
 
   self.stats_array = [self.str, self.dex, self.con, self.int, self.wis, self.cha];
   self.target_numbers = ko.observableArray([new Stat(0), new Stat(0), new Stat(0),

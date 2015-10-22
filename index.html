@@ -15,13 +15,23 @@
 <body>
   <div class="container" id="charter_generator_app">
     <div class="row">
-      <div class="col-xs-6 text-center">Charater Name</div>
-      <div class="col-xs-6 text-center">Player Name</div>
-      <div class="col-xs-6">
-        <input type="text" class="col-xs-4 col-xs-offset-4 text-center" data-bind="textInput: charater_name">
+      <div class="col-xs-4 text-center">Charater Name</div>
+      <div class="col-xs-4 text-center">Player Name</div>
+      <div class="col-xs-4 text-center">Background</div>
+      <div class="col-xs-4">
+        <input type="text" class="col-xs-4 col-xs-offset-4 text-center"
+        data-bind="textInput: charater_name">
       </div>
-      <div class="col-xs-6">
-        <input type="text" class="col-xs-4 col-xs-offset-4 text-center" data-bind="textInput: player_name">
+      <div class="col-xs-4">
+        <input type="text" class="col-xs-4 col-xs-offset-4 text-center"
+         data-bind="textInput: player_name">
+      </div>
+      <div class="col-xs-4">
+        <select type-"text" class="selectpicker col-xs-4 col-xs-offset-4 text-center"
+        data-bind='options: availableBackgrounds.backgrounds,
+                  optionsText: "name",
+                  value: chosesBackgroung'></select>
+
       </div>
     </div>
     <div class="row">
@@ -166,6 +176,8 @@
   <script type='text/javascript' src='js/charater.js'></script>
   <script type='text/javascript' src='js/available_races.js'></script>
   <script type='text/javascript' src='js/available_classes.js'></script>
+  <script type='text/javascript' src='js/available_backgrounds.js'></script>
+
   <script type='text/javascript' src='js/skills.js'></script>
   <script type='text/javascript' src='js/charter_gen_viewmodel.js'></script>
 
