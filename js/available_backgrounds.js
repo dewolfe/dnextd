@@ -4,6 +4,6 @@ function AvailableBackgrounds() {
       "name": "Acolyte",
       "skill_proficiencies": ["Insight","Religion"],
       "equipment": []
-    }
+    };
 
 }
