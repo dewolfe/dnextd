@@ -21,7 +21,7 @@ function CharacterGeneratorViewModel() {
   self.int = new CharaterStat("int", self.race);
   self.wis = new CharaterStat("wis", self.race);
   self.cha = new CharaterStat("cha", self.race);
-  self.avaiableClasses =  new AvaiableClasses(self);
+  self.avaiableClasses = new AvaiableClasses(self);
   self.chosenclass1 = ko.observable(self.avaiableClasses.dclasses[0]);
   self.chosenclass2 = ko.observable();
   self.chosesbackgroud = ko.observable();
@@ -30,9 +30,9 @@ function CharacterGeneratorViewModel() {
   self.target_numbers = ko.observableArray([new Stat(0), new Stat(0), new Stat(0),
     new Stat(0), new Stat(0), new Stat(0)
   ]);
-  self.proficient_bouns=ko.computed(function(){
-     return self.chosenclass1().proficiency[self.levelclass1()];
-  },this);
+  self.proficient_bouns = ko.computed(function() {
+    return self.chosenclass1().proficiency[self.levelclass1()];
+  }, this);
 
   self.aligenment = ko.observable();
   self.avaliableAllignment = ko.observableArray(['CE', 'LE', 'N', 'CG', 'LG']);
@@ -41,13 +41,24 @@ function CharacterGeneratorViewModel() {
     if (self.proficient_skill().indexOf(data) >= 0) {
       proficient = self.proficient_bouns();
     }
-    if (self.chosesbackgroud().skill_proficiencies)
+
     return self[data.check].saving_throw() + proficient;
   };
-  self.enable_skill =function(data){
-    if(self.chosenclass1().skills.indexOf(data.name) >= 0){
+  self.backgroud_modifier = function(data) {
+    var proficient = 0;
+    if (self.chosesbackgroud().skill_proficiencies.indexOf(data.name) >= 0) {
+      proficient += self.proficient_bouns();
+    }
+    return proficient;
+
+  };
+ self.skill_total = function(data){
+   return self.backgroud_modifier(data) +  self.skill_modifier(data);
+ };
+  self.enable_skill = function(data) {
+    if (self.chosenclass1().skills.indexOf(data.name) >= 0) {
       return true;
-    }else{
+    } else {
       return false;
     }
   };
