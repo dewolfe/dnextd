@@ -34,15 +34,17 @@ function AvaiableClasses(chvm) {
 
     }, {
       "name": "Barbarian",
+      "sub_class": "",
       "skills": ["Animal Handling", "Athletics", "Intimidation", "Nature", "Perception", "Survival"],
       "proficiency": [0, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6],
+      "hit dice": "1d12",
+      "hp_level_1": 12,
       "sub_skill": {
         "name": 'Rage',
         "points": [0, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6]
-      },
+      }
 
     }, {
-
       "name": "Bard",
       "skills": ["Athletics", "Investigation", "Perception", "Acrobatics",
         "Nature", "Survival", "Slight of Hand", "Religion", "Deception", "Stealth", "Animal Handling",

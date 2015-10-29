@@ -39,7 +39,7 @@
     </div>
     <div class="row">
       <div class="col-xs-3 text-center">
-        <select class="selectpicker form-control" data-bind='options: avaiableClasses.dclasses,
+        <select class="selectpicker form-control" data-bind='options: avaiableClasses,
                                                           optionsText: "name",
                                                           value: chosenclass1,
                                                           selectedOption: chosenclass1()'></select>
@@ -68,6 +68,7 @@
       <div class="col-xs-3 text-center">Proficiency</div>
 
     </div>
+
     <div class="row">
       <div class="col-xs-3 text-center">
         <select class="selectpicker form-control" data-bind='options: availableRaces.races,
@@ -91,8 +92,13 @@
         <span data-bind="text: proficient_bouns"></span>
       </div>
     </div>
-
-
+    <div class="row">
+         <div class="col-xs-6 text-center" data-bind="text: chosenclass1().sub_skill.name"></div>
+         <div class="col-xs-6 text-center" data-bind="text: chosenclass1().sub_skill_modifier.name"></div>
+      <div class="col-xs-6 text-center" data-bind="text: sub_skill_points"></div>
+      <div class="col-xs-6 text-center" data-bind="text: sub_skill_modifier"></div>
+    </div>
+    chosenclass1
     <div class="row">
       <div class="col-xs-3">
         <button class="btn btn-default" data-bind="click: roll_4_d_6">Roll</button>
@@ -166,6 +172,7 @@
 </body>
 
 <footer>
+
   <script type='text/javascript' src='js/lib/jquery-2.1.3.min.js'></script>
   <script type='text/javascript' src='js/lib/jquery-ui.min.js'></script>
 
@@ -178,16 +185,18 @@
   <script type='text/javascript' src="js/util.js"></script>
   <script type='text/javascript' src='js/charater.js'></script>
   <script type='text/javascript' src='js/available_races.js'></script>
+  <script type='text/javascript' src='js/classes/barbarian.js'></script>
+
   <script type='text/javascript' src='js/available_classes.js'></script>
   <script type='text/javascript' src='js/available_backgrounds.js'></script>
 
   <script type='text/javascript' src='js/skills.js'></script>
   <script type='text/javascript' src='js/charter_gen_viewmodel.js'></script>
-
-
   <script type='text/javascript'>
     ko.applyBindings(new CharacterGeneratorViewModel(), $('#charter_generator_app')[0])
   </script>
+
+
 </footer>
 
 </html>
