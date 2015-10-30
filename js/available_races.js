@@ -15,7 +15,8 @@ function AvailableRaces() {
     },
     {
         "name": "Dwarf",
-        "sub_race": ["Hill", "Mountain"],
+        "sub_race": [
+            new SubRace("Hill",{wis: 1}), new SubRace("Mountain",{str:2})],
         "mod":{con:2}
     }, {
         "name": "Elf",
@@ -60,4 +61,11 @@ function AvailableRaces() {
 
 
   ];
+}
+
+function SubRace(name,mod){
+     var self = this;
+     self.name = name;
+     self.mod = mod;
+
 }

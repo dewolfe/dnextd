@@ -2,25 +2,25 @@ function CharacterGeneratorViewModel() {
     var self = this;
     var chartater = new Charater();
     self.numbers = ko.observableArray([1, 2, 3, 4, 5, 6]);
-    self.chosenRace = ko.observableArray([]);
     self.chosenAllignment = ko.observable();
     self.availableRaces = new AvailableRaces();
     self.availableBackgrounds = new AvailableBackgrounds();
     self.charater_name = ko.observable();
     self.player_name = ko.observable();
     self.remove_me = ko.observable();
-    self.race = ko.observable(self.availableRaces.races[0]);
+    self.chosen_race = ko.observable(self.availableRaces.races[2]);
+    self.chosen_sub_race = ko.observable(self.availableRaces.races[2].sub_race[0]);
     self.skills = ko.observableArray(skills);
     self.levelclass1 = ko.observable(1);
     self.levelclass2 = ko.observable();
     self.proficient_skill = ko.observableArray([]);
 
-    self.str = new CharaterStat("str", self.race);
-    self.dex = new CharaterStat("dex", self.race);
-    self.con = new CharaterStat("con", self.race);
-    self.int = new CharaterStat("int", self.race);
-    self.wis = new CharaterStat("wis", self.race);
-    self.cha = new CharaterStat("cha", self.race);
+    self.str = new CharaterStat("str", this);
+    self.dex = new CharaterStat("dex", this);
+    self.con = new CharaterStat("con", this);
+    self.int = new CharaterStat("int", this);
+    self.wis = new CharaterStat("wis", this);
+    self.cha = new CharaterStat("cha", this);
     self.avaiableClasses = [new Barbarian(this)];
     self.chosenclass1 = ko.observable(self.avaiableClasses[0]);
     self.chosenclass2 = ko.observable();
@@ -64,7 +64,7 @@ function CharacterGeneratorViewModel() {
         return self.backgroud_modifier(data) + self.skill_modifier(data);
     };
     self.enable_skill = function (data) {
-        if (self.chosenclass1().skills.indexOf(data.name) >= 0) {
+        if(self.chosenclass1().skills.indexOf(data.name) >= 0) {
             return true;
         } else {
             return false;

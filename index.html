@@ -15,7 +15,7 @@
 <body>
   <div class="container" id="charter_generator_app">
     <div class="row">
-      <div class="col-xs-4 text-center">Charater Name</div>
+      <div class="col-xs-4 text-center">Character Name</div>
       <div class="col-xs-4 text-center">Player Name</div>
       <div class="col-xs-4 text-center">Background</div>
       <div class="col-xs-4">
@@ -73,13 +73,14 @@
       <div class="col-xs-3 text-center">
         <select class="selectpicker form-control" data-bind='options: availableRaces.races,
                                                                  optionsText: "name",
-                                                                 value: race,
-                                                                 selectedOption: race()'>
+                                                                 value: chosen_race'>
 
         </select>
       </div>
-      <div class="col-xs-3 text-center" data-bind="with: race">
-        <select class="selectpicker form-control" data-bind='options: sub_race'>
+      <div class="col-xs-3 text-center" data-bind="with: chosen_race">
+        <select class="selectpicker form-control" data-bind='options: sub_race,
+                                                             optionsText: "name",
+                                                             value: $parent.chosen_sub_race'>
 
         </select>
       </div>
@@ -98,7 +99,6 @@
       <div class="col-xs-6 text-center" data-bind="text: sub_skill_points"></div>
       <div class="col-xs-6 text-center" data-bind="text: sub_skill_modifier"></div>
     </div>
-    chosenclass1
     <div class="row">
       <div class="col-xs-3">
         <button class="btn btn-default" data-bind="click: roll_4_d_6">Roll</button>
@@ -106,15 +106,16 @@
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="col-xs-3"></div>
-        <div class="col-xs-3">Attribute</div>
-        <div class="col-xs-3">Modifier</div>
-        <div class="col-xs-3">Saving Throw</div>
+        <div class="col-xs-2"></div>
+        <div class="col-xs-2">Attribute</div>
+        <div class="col-xs-2">Race Modifier</div>
+        <div class="col-xs-2">Sub Modifier</div>
+        <div class="col-xs-2">Saving Throw</div>
       </div>
     </div>
     <div class="row">
       <div class="col-xs-6">
-        <div class="col-xs-3">
+        <div class="col-xs-2">
           <div class="col-xs-12 center"></div>
           <div class="col-xs-12 center">STR</div>
           <div class="col-xs-12 center">DEX</div>
@@ -123,7 +124,7 @@
           <div class="col-xs-12 center">WIZ</div>
           <div class="col-xs-12 center">CHR</div>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-2">
           <div class="col-xs-12 center"></div>
           <div class="container" data-bind="sortable: {data: target_numbers, afterMove: populate_stats} ">
             <div class="item">
@@ -131,7 +132,7 @@
             </div>
           </div>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-2">
           <span class="col-xs-12 center" data-bind="text: str.modifier()"></span>
           <span class="col-xs-12 center" data-bind="text: dex.modifier()"></span>
           <span class="col-xs-12 center" data-bind="text: con.modifier()"></span>
@@ -139,7 +140,15 @@
           <span class="col-xs-12 center" data-bind="text: wis.modifier()"></span>
           <span class="col-xs-12 center" data-bind="text: cha.modifier()"></span>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-2">
+          <span class="col-xs-12 center" data-bind="text: str.sub_modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: dex.sub_modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: con.sub_modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: int.sub_modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: wis.sub_modifier()"></span>
+          <span class="col-xs-12 center" data-bind="text: cha.sub_modifier()"></span>
+        </div>
+        <div class="col-xs-2">
           <span class="col-xs-12 center" data-bind="text: str.saving_throw()"></span>
           <span class="col-xs-12 center" data-bind="text: dex.saving_throw()"></span>
           <span class="col-xs-12 center" data-bind="text: con.saving_throw()"></span>
