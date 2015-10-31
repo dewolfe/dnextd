@@ -14,6 +14,17 @@ function Barbarian(chvm) {
     self.sub_skill_modifier = {
           "name": 'Rage Damage',
           "modifier": [0,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4]
-    }
+    };
+    self.feature =[
+        new Feature(1,
+            "Rage",
+        "Advantage on Strength checks and Strength saving throws" +
+        "bonus to the damage" +
+         "resistance to bludgeoning, piercing, and slashing damage"
+
+        ),
+
+    ]
+
 
 }
